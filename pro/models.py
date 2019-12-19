@@ -16,4 +16,14 @@ class Post(models.Model):
 	comment=models.TextField(blank=True)
 	sizes=models.CharField(max_length=1,choices=SHIRT_SIZES)
 
+class Task(models.Model):
+	Task_Lists=(
+		('W','Web Scraping'),
+		('F','Front_End'),
+		('B','Back_End'),
+		)	
+	tasks=models.CharField(max_length=20,choices=Task_Lists)
+	Done=models.BooleanField(blank=False)
+
+
 
