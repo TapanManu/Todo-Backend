@@ -9,3 +9,4 @@ class Task(models.Model):
 	def __str__(self):
 		return self.task_name
 
+#now i have added some null constraints to all fields for time being,need to develop for the better

@@ -4,6 +4,14 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 from .forms import TaskForms
 
+
+def base(request):
+	task_obj=Task.objects.all()
+	context={
+		'task_index':task_obj,
+	}
+	return render(request,'task/base.html',context)
+
 def index(request):
 	task_obj=Task.objects.all()
 	form=TaskForms()
