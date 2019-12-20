@@ -1,8 +1,9 @@
 from django.urls import path
-from . import views
+from .import views
 
 app_name='task'
 urlpatterns=[
 path('',views.index,name='index'),
-path('<int:task_id>/',views.detail,name='detail'),
+path('create',views.create,name='create'),
+path('<int:task_id>/delete',views.delete,name='delete'),
 ]
