@@ -1,0 +1,12 @@
+<h1>User Login Page</h1>
+{% if error_message %}<p>{{error_message}}</p>{% endif %}
+<form action="{% url 'task:createuser' %}" method="post">
+	{% csrf_token %}
+	{{form.username}}
+	<button type="submit">Create User</button>
+</form>	
+{% if user %}
+{% for ob in user %}
+<p>{{ob.username}}</p>
+{% endfor %}
+{% endif %}

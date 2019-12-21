@@ -1,8 +1,26 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Task
+from .models import Task,User
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
-from .forms import TaskForms
+from .forms import TaskForms,UserForms
+
+def home(request):
+	user_obj=User.objects.all()
+	form=UserForms()
+	context={
+		'user':user_obj,
+		'form':form,
+	}
+	return render(request,'task/home.html',context)
+
+def createuser(request):
+	form=UserForms(request.POST)
+	if form.is_valid():
+		form.save()
+	else:
+		print("false")
+	return HttpResponseRedirect(reverse('task:home'))		
+
 
 
 def base(request):
@@ -18,6 +36,7 @@ def index(request):
 	patterns={
 		'task_index':task_obj,
 		'forms':form,
+		'error_message':"Your response is not valid,please try again",
 	}
 	return render(request,'task/index.html',patterns)
 
