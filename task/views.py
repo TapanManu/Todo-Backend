@@ -19,7 +19,25 @@ def createuser(request):
 		form.save()
 	else:
 		print("false")
-	return HttpResponseRedirect(reverse('task:home'))		
+	return HttpResponseRedirect(reverse('task:home'))	
+
+def login(request):
+	if request.method=='POST':
+		form=UserForms(request.POST)
+		user_obj=User.objects.all()
+		if form.is_valid():
+			uname=form.cleaned_data['username']
+			upass=form.cleaned_data['password']
+			for ob in user_obj:
+				if (uname == ob.username) and (upass == ob.password):
+					return HttpResponse("Logged in successfully")			
+	return HttpResponse("Failed to log")
+
+
+	
+
+
+
 
 
 
@@ -36,7 +54,6 @@ def index(request):
 	patterns={
 		'task_index':task_obj,
 		'forms':form,
-		'error_message':"Your response is not valid,please try again",
 	}
 	return render(request,'task/index.html',patterns)
 

@@ -1,12 +1,29 @@
 <h1>User Login Page</h1>
 {% if error_message %}<p>{{error_message}}</p>{% endif %}
+<fieldset>
 <form action="{% url 'task:createuser' %}" method="post">
 	{% csrf_token %}
+	<div class="name">
 	{{form.username}}
-	<button type="submit">Create User</button>
-</form>	
-{% if user %}
-{% for ob in user %}
-<p>{{ob.username}}</p>
-{% endfor %}
-{% endif %}
+	</div>
+	<div class="password">
+	{{form.password}}
+	</div>	
+	<button type="submit">Sign Up</button>
+</form>
+<a href="#home">Already Have an account?Please Log In</a>
+</fieldset>	
+<fieldset>
+<form action="{% url 'task:login' %}" method="post">
+	{% csrf_token %}
+	<label for="username">Username</label>
+	<div class="uname">
+		{{form.username}}
+	</div>
+	<label for="password">Password</label>
+	<div class="upass">
+		{{form.password}}
+	</div>
+	<button type="submit">Sign In</button>
+</form>
+</fieldset>			

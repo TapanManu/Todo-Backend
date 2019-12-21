@@ -9,4 +9,4 @@ class TaskForms(forms.ModelForm):
 class UserForms(forms.ModelForm):
 	class Meta:
 		model=User
-		fields=('username',)		
+		fields=('username','password',)		

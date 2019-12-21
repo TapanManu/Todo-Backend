@@ -13,6 +13,6 @@ class Task(models.Model):
 
 class User(models.Model):
 	username=models.CharField(max_length=50)
-	#add a field for password later!
+	password=models.CharField(max_length=15,default='password')
 	def __str__(self):
 		return self.username
