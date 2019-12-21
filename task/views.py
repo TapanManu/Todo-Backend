@@ -29,17 +29,10 @@ def login(request):
 			uname=form.cleaned_data['username']
 			upass=form.cleaned_data['password']
 			for ob in user_obj:
+				logged=True
 				if (uname == ob.username) and (upass == ob.password):
-					return HttpResponse("Logged in successfully")			
-	return HttpResponse("Failed to log")
-
-
-	
-
-
-
-
-
+					return HttpResponseRedirect(reverse('task:index',kwargs={'username':ob.username}))		
+	return HttpResponseRedirect(reverse('task:home'))
 
 def base(request):
 	task_obj=Task.objects.all()
@@ -48,7 +41,7 @@ def base(request):
 	}
 	return render(request,'task/base.html',context)
 
-def index(request):
+def index(request,username):
 	task_obj=Task.objects.all()
 	form=TaskForms()
 	patterns={

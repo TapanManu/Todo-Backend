@@ -1,5 +1,6 @@
 <h1>To Do List</h1>
 {% if error_message %}<p><strong>{{error_message}}</strong></p>{%endif%}
+<p>{{username}}</p>
 <form action="{% url 'task:create' %}" method="post">
 	{% csrf_token %}
 	<label for="task" class="todo">ToDo</label>
