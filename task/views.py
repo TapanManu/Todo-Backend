@@ -11,7 +11,7 @@ def home(request):
 		'user':user_obj,
 		'form':form,
 	}
-	return render(request,'task/home.html',context)
+	return render(request,'task/taskhome.html',context)
 
 def createuser(request):
 	form=UserForms(request.POST)
@@ -50,15 +50,15 @@ def index(request,username):
 	}
 	return render(request,'task/index.html',patterns)
 
-def create(request):
+def create(request,username):
 	form=TaskForms(request.POST)
 	if form.is_valid():
 		form.save()
 	else:
 		print("false")	
-	return HttpResponseRedirect(reverse('task:index'))
+	return HttpResponseRedirect(reverse('task:index'),kwargs={'username':username})
 
-def delete(request,task_id=None):
+def delete(request,task_id,username):
 	task_obj=get_object_or_404(Task,pk=task_id)
 	task_obj.delete()
 	return HttpResponseRedirect(reverse('task:index'))	

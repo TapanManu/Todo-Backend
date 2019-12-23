@@ -1,7 +1,7 @@
 <h1>To Do List</h1>
 {% if error_message %}<p><strong>{{error_message}}</strong></p>{%endif%}
-<p>{{username}}</p>
-<form action="{% url 'task:create' %}" method="post">
+<p>{{request.user.username}}</p>
+<form action="{% url 'task:create' user.username %}" method="post">
 	{% csrf_token %}
 	<label for="task" class="todo">ToDo</label>
 	<div class="form_body">
@@ -15,7 +15,7 @@
 <h2>Current Todos</h2>
 {% for t in task_index %}
 <div>{{t.task_name}}</div>
-<form action="{% url 'task:delete' t.id %}" method="post">
+<form action="{% url 'task:delete' t.id user.username %}" method="post">
 	{%csrf_token %}
 	<button>Delete</button>
 </form>		
