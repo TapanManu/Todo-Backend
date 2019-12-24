@@ -1,0 +1,36 @@
+h1{
+	color:whitesmoke;
+	font-family:monotype-corsiva;
+	text-align:center;
+}
+body{
+	background:linear-gradient(blue,violet) no-repeat;
+	color:#3a393b;
+	height:100%;
+	width:100%;
+	background:rgba(0,0,0,0.9);
+}
+fieldset{
+	background:linear-gradient(#ebe6ed,#ddd9de) no-repeat;
+	width:500px;
+	margin-left:250px;
+}
+strong{
+	color:whitesmoke;
+	margin-left: 250px;
+}
+button{
+	background-color:#2fba41;
+	color:white;
+	border:none;
+	height:50px;
+	width:300px;
+	margin-left:50px;
+	border-radius:5px;
+	font-size: 30px;
+}
+button:hover{
+	cursor:pointer;
+	z-index:5000;
+	background:#316b39;
+}

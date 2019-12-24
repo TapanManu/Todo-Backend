@@ -3,8 +3,9 @@ from .models import UserProfile
 from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):
+	username=forms.CharField(max_length=120)
 	password=forms.CharField(widget=forms.PasswordInput())
-	email = forms.EmailField(max_length=254, help_text='Provide a valid email address.')
+	email = forms.EmailField(max_length=254)
 
 	class Meta:
 		model=User

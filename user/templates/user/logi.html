@@ -1,3 +1,6 @@
+{% load static %}
+<link rel='stylesheet' type='text/css' href="{% static 'user/logi.css' %}">
+
 <h1>User Login Portal</h1>
 <fieldset>
 	<form action="{% url 'user:logi' %}" method='post'>
