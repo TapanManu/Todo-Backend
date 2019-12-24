@@ -59,7 +59,7 @@ Temp_Path = os.path.realpath('.')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'')],
+        'DIRS': [os.path.join(BASE_DIR,'user','templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,7 @@
+<h1>Home</h1>
+{% csrf_token %}
+<p>Hi {{user.username}}</p>
+<form action="{% url 'user:logo' %}" method='post'>
+	{% csrf_token %}
+	<button type="submit">Log Out</button>
+</form>	

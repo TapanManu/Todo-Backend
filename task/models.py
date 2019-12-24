@@ -11,9 +11,4 @@ class Task(models.Model):
 
 #now i have added some null constraints to all fields for time being,need to develop for the better
 
-class User(models.Model):
-	username=models.CharField(max_length=50)
-	password=models.CharField(max_length=15,default='password')
-	
-	def __str__(self):
-		return self.username
+

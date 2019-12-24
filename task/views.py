@@ -1,38 +1,12 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Task,User
+from .models import Task
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
-from .forms import TaskForms,UserForms
+from .forms import TaskForms
 
-def home(request):
-	user_obj=User.objects.all()
-	form=UserForms()
-	context={
-		'user':user_obj,
-		'form':form,
-	}
-	return render(request,'task/taskhome.html',context)
 
-def createuser(request):
-	form=UserForms(request.POST)
-	if form.is_valid():
-		form.save()
-	else:
-		print("false")
-	return HttpResponseRedirect(reverse('task:home'))	
 
-def login(request):
-	if request.method=='POST':
-		form=UserForms(request.POST)
-		user_obj=User.objects.all()
-		if form.is_valid():
-			uname=form.cleaned_data['username']
-			upass=form.cleaned_data['password']
-			for ob in user_obj:
-				logged=True
-				if (uname == ob.username) and (upass == ob.password):
-					return HttpResponseRedirect(reverse('task:index',kwargs={'username':ob.username}))		
-	return HttpResponseRedirect(reverse('task:home'))
+
 
 def base(request):
 	task_obj=Task.objects.all()

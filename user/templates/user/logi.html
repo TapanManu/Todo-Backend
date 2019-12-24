@@ -1,0 +1,8 @@
+<h1>User Login Portal</h1>
+<fieldset>
+	<form action="{% url 'user:logi' %}" method='post'>
+		{%csrf_token %}
+		{{user_form.as_p}}
+		<button type='submit'>Log In</button>
+	</form>
+</fieldset>		
