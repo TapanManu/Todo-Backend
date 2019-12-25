@@ -3,26 +3,26 @@
 <h1>Home</h1>
 <p>Hi {{user.username}}</p>
 <fieldset>
-<form id='taskcreate' action="{% url 'task:create' user.username%}" method='post'>
+<form class='taskcreate' action="{% url 'task:create' user.username%}" method='post'>
 	{% csrf_token %}
 	<label for='task'>ToDo</label>
 	<div class="form_body">
 		{{forms.task_name}}
 	</div>
-	<button type='submit'>Add Task</button>	
+	<button class='add'type='submit'>Add Task</button>	
 </form>
 </fieldset>
 
 <h2>Current Todos</h2>
 {% for t in task_index %}
-<div>{{t.task_name}}</div>
-<form action="{% url 'task:delete' t.id user.username %}" method="post">
+<div class="taskname">{{t.task_name}}</div>
+<form class='taskdelete' action="{% url 'task:delete' t.id user.username %}" method="post">
 	{%csrf_token %}
-	<button>Delete</button>
+	<button class='delete'>Delete</button>
 </form>		
 {% endfor %}
 
-<form id='logout' action="{% url 'user:logo' %}" method='post'>
+<form class='logout' action="{% url 'user:logo' %}" method='post'>
 	{% csrf_token %}
-	<button type="submit">Log Out</button>
+	<button class='logoutb' type="submit">Log Out</button>
 </form>	

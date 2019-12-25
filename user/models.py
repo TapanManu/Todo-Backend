@@ -12,3 +12,8 @@ class UserProfile(models.Model):
 
 	def __str__(self):
 		return self.user.username	
+
+
+
+
+		#may be add models.ManytoManyField here to get full working performance

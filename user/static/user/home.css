@@ -25,6 +25,48 @@ button:hover{
 	z-index:5000;
 	background:#316b39;
 }
+.add{
+	margin-left:300px;
+	margin-top:-30px;
+}
 p{
 	color:whitesmoke;
+	font-size:40px;
+}
+button.delete{
+	background-color:#c71c1c;
+	margin-left:315px;
+	margin-top:-40px;
+}
+.delete:hover{
+	background-color: #730b0b;
+}
+h2{
+	color:whitesmoke;
+}
+.logoutb{
+	margin-left:400px;
+	margin-top:100px;
+	background-color: #c4a7a7;
+}
+.logoutb:hover{
+	background-color: #785f5f;
+}
+.taskname{
+	color:#dbc3c3;
+	font-size: 30px;
+}
+.taskdelete{
+	line-spacing: 25px;
+}
+label{
+	color:#1f2421;
+}
+fieldset{
+	background-color: #c3dbcd;
+	width:50px;
+	margin:0;
+}
+forms.task_name{
+	width:100px;
 }
