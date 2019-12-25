@@ -36,8 +36,6 @@ def register(request):
 
 
 
-
-
 def logi(request):
 	user_form=UserForm(data=request.POST)
 	profile_form=UserProfileForm(data=request.POST)
@@ -58,6 +56,8 @@ def logi(request):
 def logo(request):
 	auth.logout(request)
 	return HttpResponse("Successfully Logged out")
+
+
 	
 
 

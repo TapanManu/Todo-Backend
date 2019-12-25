@@ -4,7 +4,7 @@ from task.models import Task
 
 class UserProfile(models.Model):
 	user=models.OneToOneField(User,on_delete=models.DO_NOTHING,)
-	tasks=models.ForeignKey(Task,on_delete=models.CASCADE)
+	tasks=models.ForeignKey(Task,on_delete=models.CASCADE,null=True)
 	website=models.URLField(blank=True)
 
 	def __unicode__(self):
