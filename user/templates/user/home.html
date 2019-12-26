@@ -1,7 +1,7 @@
 {% load static %}
 <link rel='stylesheet' type='text/css' href="{% static 'user/home.css' %}">
 <h1>Home</h1>
-<p>Hi {{user.username}}</p>
+<p class="username">Hi {{user.username}}</p>
 <fieldset>
 <form class='taskcreate' action="{% url 'task:create' user.username%}" method='post'>
 	{% csrf_token %}
@@ -12,7 +12,8 @@
 	<button class='add'type='submit'>Add Task</button>	
 </form>
 </fieldset>
-
+<div class="todo-list">	
+{% if task_index %}
 <h2>Current Todos</h2>
 {% for t in task_index %}
 <div class="taskname">{{t.task_name}}</div>
@@ -21,7 +22,12 @@
 	<button class='delete'>Delete</button>
 </form>		
 {% endfor %}
-
+{% else %}
+<div class="no-task">
+	<p>Your tasks will be displayed here!</p>
+</div>
+{% endif %}	
+</div>
 <form class='logout' action="{% url 'user:logo' %}" method='post'>
 	{% csrf_token %}
 	<button class='logoutb' type="submit">Log Out</button>

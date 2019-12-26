@@ -50,12 +50,12 @@ def logi(request):
 			}
 			return render(request,'user/home.html',context)	
 		else:
-			return HttpResponse("invalid user")	
+			return HttpResponseRedirect(reverse('user:home'))	
 	return render(request,'user/logi.html',{'user_form':user_form,'profile_form':profile_form})
 
 def logo(request):
 	auth.logout(request)
-	return HttpResponse("Successfully Logged out")
+	return render(request,'user/logo.html')
 
 
 	

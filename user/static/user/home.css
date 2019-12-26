@@ -1,14 +1,20 @@
 h1{
 	color:whitesmoke;
-	font-family:monotype-corsiva;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
 	text-align:center;
+	background:#853535;
+	margin:0;
+	
 }
 body{
-	background:linear-gradient(blue,violet) no-repeat;
+	background:linear-gradient(#f7bdb2,#f2c5bd) no-repeat;
 	color:#3a393b;
 	height:100%;
 	width:100%;
-	background:rgba(0,0,0,0.9);
+	margin:0;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
 }
 button{
 	background-color:#2fba41;
@@ -19,6 +25,8 @@ button{
 	margin-left:50px;
 	border-radius:5px;
 	font-size: 30px;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
 }
 button:hover{
 	cursor:pointer;
@@ -26,17 +34,24 @@ button:hover{
 	background:#316b39;
 }
 .add{
-	margin-left:300px;
-	margin-top:-30px;
+	margin-left:0px;
+	margin-top:50px;
+	width:250px;
 }
-p{
+.username{
 	color:whitesmoke;
 	font-size:40px;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	margin-left:100px;
 }
 button.delete{
 	background-color:#c71c1c;
 	margin-left:315px;
 	margin-top:-40px;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	width:150px;
 }
 .delete:hover{
 	background-color: #730b0b;
@@ -45,28 +60,78 @@ h2{
 	color:whitesmoke;
 }
 .logoutb{
-	margin-left:400px;
-	margin-top:100px;
-	background-color: #c4a7a7;
+	margin-left:100px;
+	margin-top:0px;
+	background-color:#fa4343;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	z-index:700;
 }
 .logoutb:hover{
-	background-color: #785f5f;
+	background-color:#bd1a1a;
 }
 .taskname{
-	color:#dbc3c3;
+	color:#f7e9e9;
 	font-size: 30px;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	margin-left: 10px;
 }
 .taskdelete{
 	line-spacing: 25px;
+	margin-left:-10px;
 }
 label{
 	color:#1f2421;
 }
 fieldset{
-	background-color: #c3dbcd;
+	background-color: #faeded;
 	width:50px;
-	margin:0;
+	margin-left:100px;
+	margin-top:100px;
+	height:200px;
+	width:50px;
+	border: 1px solid #ff7878;
+	z-index:300;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	border-radius:10px;
 }
 forms.task_name{
 	width:100px;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	position: fixed;
+
+}
+.todo-list{
+	margin-left:600px;
+	margin-top:-250px;
+	background-color:#fa5a5a;
+	font-family:sans-serif;
+	font:Source-Sans-Pro;
+	width:469px;
+	border-radius: 10px;
+	position:fixed;
+	color:#f5f0f0;
+}
+h2{
+	background:#f52a2a;
+	z-index:500;
+	border-radius: 10px;
+	margin-left:5px;
+	width:460px;
+
+}
+.logout{
+	margin-left:0px;
+	margin-top:100px;
+	position:sticky;
+	z-index:60;
+	height:90px;
+	background-color: none;
+}
+.no-task{
+	color:white;
+	margin-left:10px;
 }
