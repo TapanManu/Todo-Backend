@@ -2,22 +2,30 @@ h1{
 	color:whitesmoke;
 	font-family:monotype-corsiva;
 	text-align:center;
+	background:#853535;
+	margin:0;
+	height:50px;
 }
 body{
-	background:linear-gradient(blue,violet) no-repeat;
+	background:linear-gradient(#f7bdb2,#f2c5bd) no-repeat;
 	color:#3a393b;
 	height:100%;
 	width:100%;
-	background:rgba(0,0,0,0.9);
+	margin:0;
 }
 fieldset{
-	background:linear-gradient(#ebe6ed,#ddd9de) no-repeat;
+	background:linear-gradient(#fff5f5,#ffffff) no-repeat;
 	width:500px;
-	margin-left:250px;
+	margin-left:200px;
+	margin-top:40px;
+	border: 1px solid #ff7878;
+	border-radius: 10px;
 }
-strong{
+.reg{
 	color:whitesmoke;
 	margin-left: 250px;
+	margin-top:100px;
+	font-size: 30px;
 }
 button{
 	background-color:#2fba41;

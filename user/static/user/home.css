@@ -111,9 +111,11 @@ forms.task_name{
 	font-family:sans-serif;
 	font:Source-Sans-Pro;
 	width:469px;
+	height:300px;
 	border-radius: 10px;
 	position:fixed;
 	color:#f5f0f0;
+	overflow-y:scroll;
 }
 h2{
 	background:#f52a2a;
@@ -134,4 +136,7 @@ h2{
 .no-task{
 	color:white;
 	margin-left:10px;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }

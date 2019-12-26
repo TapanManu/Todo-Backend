@@ -6,7 +6,9 @@
 <h1>{{user.username}}</h1>
 <strong>Thank you for being a member!</strong>
 {% else %}
-<strong>Please Register</strong><br/>
+<div class="reg">
+<strong>Please Register</strong>
+</div>
 
 <fieldset>
 	<form action="{% url 'user:register' %}" method="post">
