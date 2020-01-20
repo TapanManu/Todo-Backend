@@ -17,8 +17,8 @@ def index(request):
 def create(request,username):
 	form=TaskForms(request.POST)
 	if form.is_valid():
-		task=Task.objects.create(users=request.user)
-		t=form.save(commit=False)
+		#task=Task.objects.create(users=request.user)
+		t=form.save()
 		t.users=request.user
 		t.save()
 	else:
