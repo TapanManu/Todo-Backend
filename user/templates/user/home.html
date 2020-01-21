@@ -17,9 +17,15 @@
 <h2>Current Todos</h2>
 {% for t in task_index %}
 <div class="taskname">{{t.task_name}}</div>
+<div class="tasktime">start:{{t.start_time}}</div>
+<div class="completed_time">completed:{{t.completed_time}}</div>
 <form class='taskdelete' action="{% url 'task:delete' t.id user.username %}" method="post">
 	{%csrf_token %}
 	<button class='delete'>Delete</button>
+</form>		
+<form class='taskcomplete' action="{% url 'task:complete' t.id user.username %}" method="post">
+	{%csrf_token %}
+	<button class='complete'>Complete</button>
 </form>		
 {% endfor %}
 {% else %}

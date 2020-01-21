@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 class Task(models.Model):
 	task_name=models.CharField(max_length=200)
 	start_time=models.DateTimeField(null=True,blank=True)
-	completed=models.BooleanField(blank=True,null=True)
-	completed_time=models.DateTimeField(null=True,blank=True)
+	completed=models.BooleanField(blank=False,null=True)
+	completed_time=models.DateTimeField(null=True,blank=False)
 	users=models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
 	profile=models.ForeignKey(UserProfile,on_delete=models.CASCADE,null=True,blank=True)
 	def __str__(self):

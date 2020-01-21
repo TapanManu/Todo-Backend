@@ -6,4 +6,5 @@ app_name='task'
 urlpatterns=[
 path('create/<username>',views.create,name='create'),
 path('<int:task_id>/delete/<username>',views.delete,name='delete'),
+path('<int:task_id>/complete/<username>',views.complete,name='complete'),
 ]

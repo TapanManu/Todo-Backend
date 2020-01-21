@@ -55,7 +55,8 @@ def logi(request):
 
 def logo(request):
 	auth.logout(request)
-	return render(request,'user/logo.html')
+	#return render(request,'user/logo.html')
+	return redirect('user:logi')
 
 
 	
